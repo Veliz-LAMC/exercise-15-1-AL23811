@@ -137,6 +137,14 @@ article img {
 	float: right;
 	margin: .5em 0 1em 1em;
 	border: 1px solid black;
+	transition: transform 3s ease;
+	animation: rotate 3s ease  2 alternate;	
+	transform-origin:  top left;			
+}
+
+article img:hover{
+	transform: rotate(720deg);
+	transform-origin: top left;
 }
 
 /* the styles for the aside */
@@ -157,6 +165,15 @@ aside h3 {
 }
 aside img {
 	padding-bottom: 1em;
+	animation: leftToRight 3s ease  2 alternate ;
+}
+
+.photo:hover {
+	cursor: pointer;
+	margin-left: 100px;
+	margin-top: 20px;
+	transition:  2s ease-in-out;
+
 }
 
 /* the styles for the footer */
@@ -169,4 +186,29 @@ footer p {
 	text-align: center;
 	color: white;
 	padding: 1em 0;
+}
+
+
+/* keyFrames  */
+
+@keyframes rotate {
+	from{
+		transform: rotate(0);
+	}
+
+	to{
+		transform: rotate(720deg);
+	}
+}
+
+
+@keyframes leftToRight {
+	from{
+		margin: 0;
+	}
+
+	to{
+		margin-left: 100px;
+	    margin-top: 20px;
+	}
 }
